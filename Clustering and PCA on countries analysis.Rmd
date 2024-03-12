@@ -1,6 +1,6 @@
 ---
 title: "Clustering and PCA Dimension Reduction on Countries Data"
-output: html_document
+output: github_document
 ---
 
 ## Introduction: 
