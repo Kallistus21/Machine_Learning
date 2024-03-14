@@ -100,20 +100,20 @@ Before we start clustering, we need to check our clustering tendency(using hopki
 and the optimal amount of clusters (using elbow and silhouette methods)
 
 ### Calculating hopkin's statistics
-```{r}
+```{r,fig.show="png"}
 get_clust_tendency(Data5,2,graph=TRUE)
 ```
 
 Our hopkin's statistic is equal to 0.87 which indicates very high clusterability tendency. This is a good sign
 
 ### Silhouette method
-```{r}
+```{r,fig.show="png"}
 opt_silhouette<-Optimal_Clusters_KMeans(Data5, max_clusters=10, plot_clusters=TRUE, criterion="silhouette")
 ```
 
 ### Elbow method
 
-```{r}
+```{r,fig.show="png"}
 opt_elbow<-Optimal_Clusters_KMeans(Data5, max_clusters=10, plot_clusters = TRUE)
 ```
 
@@ -131,7 +131,7 @@ cluster_km<-eclust(Data5,FUNcluster="kmeans",2)
 
 ### Silhouette width 
 
-```{r}
+```{r,fig.show="png"}
 fviz_silhouette(cluster_km)
 ```
 
@@ -172,13 +172,13 @@ summary(pca)
 
 ### Scree plot
 
-```{r}
+```{r,fig.show="png"}
 fviz_eig(pca, choice='eigenvalue')
 ```
 
 ### Now, the scree plot with percentages
 
-```{r}
+```{r,fig.show="png"}
 fviz_eig(pca)
 
 
@@ -202,7 +202,7 @@ Only those above 1 should be chosen. According to the output PC1 to PC5 are reta
 
 In our case, the first 5 components explain 75% of the variance
 
-```{r}
+```{r,fig.show="png"}
 library(gridExtra)
 PC1 <- fviz_contrib(pca, choice = "var", axes = 1)
 PC2 <- fviz_contrib(pca, choice = "var", axes = 2)
@@ -232,7 +232,7 @@ Let's perform the same steps as before, hopkins statistics as well as silhouette
 
 ### Hopkins statistics
 
-```{r}
+```{r,fig.show="png"}
 get_clust_tendency(pca_after$x,2,graph=TRUE)
 ```
 
@@ -240,13 +240,13 @@ It's equal to 0.59, way lower than before (0.87) and closer to 0.5 which is not 
 
 ### Silhouette PCA
 
-```{r}
+```{r,fig.show="png"}
 opt_silhouette_pca<-Optimal_Clusters_KMeans(pca_after$x, max_clusters=10, plot_clusters=TRUE, criterion="silhouette")
 ```
 
 ### Elbow PCA
 
-```{r}
+```{r,fig.show="png"}
 opt_elbow_pca<-Optimal_Clusters_KMeans(pca_after$x, max_clusters=10, plot_clusters = TRUE)
 ```
 
@@ -256,7 +256,7 @@ Based on the elbow and silhouette methods, we will choose 2 clusters again
 
 ### Perform K-means on PCA'd dataset
 
-```{r}
+```{r,fig.show="png"}
 cluster_pca_kmeans<-eclust(pca_after$x,FUNcluster="kmeans",2)
 
 
