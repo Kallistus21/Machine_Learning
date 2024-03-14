@@ -2,7 +2,7 @@
 
 ## Project Descriptions
 
-[Clustering and PCA analysis on countries data](https://rpubs.com/pbugajski/1155800)):
+[Clustering and PCA analysis on countries data](https://rpubs.com/pbugajski/1155800):
 - Project focusing on clustering and dimension reduction.
 - Utilized a dataset containing various countries characteristics (e.g., literacy, infant mortality, GDP).
 - Applied K-means clustering to identify tendencies in the dataset.
